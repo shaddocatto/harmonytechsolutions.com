@@ -536,7 +536,7 @@
                 <li><a href="#services">Services</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#contact">Contact</a></li>
-                <li><a href="#" class="cta-button">Book a Call</a></li>
+                <li><a href="https://calendly.com/harmony-tech-solutions" class="cta-button">Book a Call</a></li>
             </ul>
         </nav>
     </header>
@@ -548,7 +548,7 @@
                     <h1>Streamline Operations with AI & Automation</h1>
                     <p>We help small and mid-sized businesses eliminate busywork and adopt AI with confidence. From automation design to system integrations, we make technology work for you.</p>
                     <div class="hero-buttons">
-                        <a href="#" class="cta-button">Get Started Today</a>
+                        <a href="https://calendly.com/harmony-tech-solutions" class="cta-button">Get Started Today</a>
                         <a href="#services" class="secondary-button">Explore Services</a>
                     </div>
                 </div>
@@ -631,7 +631,7 @@
                 <div class="trust-text fade-in">
                     <h2>Built on Trust & Expertise</h2>
                     <p>As a boutique consultancy, we provide personalized attention and deep expertise to every client. Our proven track record speaks for itself.</p>
-                    <a href="#" class="cta-button">Learn Our Process</a>
+                    <a href="https://calendly.com/harmony-tech-solutions" class="cta-button">Learn Our Process</a>
                 </div>
                 <div class="stats-grid fade-in">
                     <div class="stat-item">
@@ -659,7 +659,7 @@
         <div class="container fade-in">
             <h2>Ready to Transform Your Business?</h2>
             <p>Let's discuss how we can help you streamline operations and embrace the future of work.</p>
-            <a href="#" class="cta-white">Schedule Your Free Consultation</a>
+            <a href="https://calendly.com/harmony-tech-solutions" class="cta-white">Schedule Your Free Consultation</a>
         </div>
     </section>
 
@@ -679,7 +679,7 @@
                 <div class="footer-section">
                     <h3>Contact</h3>
                     <a href="mailto:hello@harmonytechsolutions.com">hello@harmonytechsolutions.com</a>
-                    <a href="#">Schedule a Call</a>
+                    <a href="https://calendly.com/harmony-tech-solutions">Schedule a Call</a>
                 </div>
             </div>
             <div class="footer-bottom">
@@ -733,11 +733,17 @@
             }
         });
 
-        // CTA button click handlers
+        // CTA button click handlers - updated for Calendly
         document.querySelectorAll('.cta-button, .cta-white').forEach(button => {
+            if (button.getAttribute('href') === 'https://calendly.com/harmony-tech-solutions') {
+                // Let Calendly links work normally
+                return;
+            }
             button.addEventListener('click', function(e) {
-                e.preventDefault();
-                alert('Ready to get started? Contact us at hello@harmonytechsolutions.com or visit our booking page to schedule your free consultation!');
+                if (this.getAttribute('href') === '#') {
+                    e.preventDefault();
+                    alert('Ready to get started? Contact us at hello@harmonytechsolutions.com or visit our booking page to schedule your free consultation!');
+                }
             });
         });
     </script>
